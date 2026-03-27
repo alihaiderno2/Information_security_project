@@ -1,0 +1,44 @@
+# =========================
+# 1. Python (The Engine)
+# =========================
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments (If you decide to use one later)
+venv/
+env/
+.venv/
+
+# =========================
+# 2. Node.js & React (API & Dashboard)
+# =========================
+# Node modules (NEVER commit these, they are huge)
+node_modules/
+api/node_modules/
+dashboard/node_modules/
+
+# React build output
+dashboard/dist/
+dashboard/build/
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# 3. Project Specific Data
+# =========================
+# Do not commit your actual scan results to GitHub! 
+# (You don't want to accidentally publish vulnerabilities you found)
+data/results.json
+
+# =========================
+# 4. OS & Editor Files
+# =========================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
