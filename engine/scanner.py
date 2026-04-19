@@ -116,11 +116,13 @@ class Scanner:
         print(f"\n[+] Scan Complete. Report saved to: {file_path}")
     
 if __name__ == "__main__":
-    # --- AUTHORIZED TESTING TARGET ---
-    # This site is legally hosted by Acunetix for scanner testing.
-    # It contains a vulnerable search form and login form.
-    target = "http://testphp.vulnweb.com/search.php" 
+    import sys
     
-    print(f"[*] Targeting: {target}")
+    if(len(sys.argv) > 1):
+        target = sys.argv[1]
+    else:
+        target = "http://testphp.vulnweb.com/search.php" 
+    
+    print(f"Targeting: {target}")
     scan = Scanner(target)
     scan.run()
